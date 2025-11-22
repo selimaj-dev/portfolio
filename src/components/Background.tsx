@@ -1,79 +1,21 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 export default function Background({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const [pos, setPos] = useState({ x: 30, y: 100 });
-  const [vel, setVel] = useState({ x: 1, y: 1 });
-
-  useEffect(() => {
-    let frame: number;
-    let x = pos.x;
-    let y = pos.y;
-    let vx = vel.x;
-    let vy = vel.y;
-
-    const speed = 0.5;
-    const size = 100;
-
-    // helper for collision detection
-    const detectCollision = (
-      nextX: number,
-      nextY: number,
-      w: number,
-      h: number
-    ) => {
-      let collidedX = false;
-      let collidedY = false;
-
-      // Left or Right wall
-      if (nextX <= 0 || nextX + size >= w) collidedX = true;
-
-      // Top or Bottom wall
-      if (nextY <= 0 || nextY + size >= h) collidedY = true;
-
-      return { collidedX, collidedY };
-    };
-
-    const animate = () => {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-
-      const nextX = x + vx * speed;
-      const nextY = y + vy * speed;
-
-      const { collidedX, collidedY } = detectCollision(nextX, nextY, w, h);
-
-      if (collidedX) vx *= -1;
-      if (collidedY) vy *= -1;
-
-      x += vx * speed;
-      y += vy * speed;
-
-      setPos({ x, y });
-      setVel({ x: vx, y: vy });
-
-      frame = requestAnimationFrame(animate);
-    };
-
-    frame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(frame);
-  }, []);
-
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-black">
-      <img
+      <div
+        className="absolute inset-0 bg-black"
         style={{
-          transform: `translate(${pos.x}px, ${pos.y}px)`,
+          backgroundImage:
+            "radial-gradient(circle, rgba(100, 116, 139, 0.5) 1px, transparent 1px)",
+          backgroundSize: "20px 20px",
         }}
-        src="/logo.png"
-        alt="Logo"
-        className="size-24 rounded-full border-slate-500 border z-10 absolute"
       />
+
       <div className="relative z-50 overflow-y-scroll">{children}</div>
     </div>
   );

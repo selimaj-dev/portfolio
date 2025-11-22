@@ -32,7 +32,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="w-full max-w-screen-lg mx-auto">
+    <div className="w-full max-w-screen-lg mx-auto animate-fadeIn ">
       <div className="px-8 md:px-10 lg:px-15 xl:px-24">
         <h1 className="py-2 text-gray-300">Hey, I'm Klesti! 👋🏻</h1>
         <p className="font-semibold text-gray-300">
@@ -77,7 +77,7 @@ export default function App() {
             </a>
           </div>
           <div>
-            <div className="p-3 bg-transparent-ish rounded-xl">
+            <div className="p-3 rounded-xl">
               <div className="mx-auto w-max flex flex-row gap-5">
                 <Skill skill="Rust" icon={faRust} />
                 <Skill skill="Go" icon={faGolang} />
