@@ -72,9 +72,9 @@ export default function Background({
         }}
         src="/logo.png"
         alt="Logo"
-        className="size-24 rounded-full border-slate-500 border"
+        className="size-24 rounded-full border-slate-500 border z-10 absolute"
       />
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-50 overflow-y-scroll">{children}</div>
     </div>
   );
 }

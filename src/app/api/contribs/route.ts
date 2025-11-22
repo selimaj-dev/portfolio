@@ -27,8 +27,8 @@ export async function GET(req: NextRequest) {
 
   const data = await response.json();
   const total =
-    data.data.user.contributionsCollection.contributionCalendar
-      .totalContributions;
+    data?.data?.user?.contributionsCollection?.contributionCalendar
+      ?.totalContributions;
 
   return NextResponse.json({ total }, { status: 200 });
 }
