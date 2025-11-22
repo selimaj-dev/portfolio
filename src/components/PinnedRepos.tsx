@@ -31,7 +31,7 @@ export function Repo({
         rounded-xl
         h-full
         border
-        border-slate-300
+        border-slate-400
         hover:shadow-md
         transition-shadow
         duration-300

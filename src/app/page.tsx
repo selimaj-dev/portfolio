@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faJava } from "@fortawesome/free-brands-svg-icons/faJava";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CoffeeIcon, HeartIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
 
@@ -41,6 +42,14 @@ export default function App() {
           low-level programming.
         </p>
 
+        <div className="pt-6">
+          <a href="https://ko-fi.com/X8X01OX1WR" target="_blank">
+            <span className="bg-transparent-ish rounded-md border border-slate-400 p-2 flex w-max gap-2 items-center">
+              <CoffeeIcon /> Support me on Ko-fi
+            </span>
+          </a>
+        </div>
+
         {/* Socials and skill */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-transparent">
           {/* socials */}
@@ -48,7 +57,7 @@ export default function App() {
             <a href="https://github.com/kleo-dev/" target="blank_">
               <FontAwesomeIcon
                 icon={faGithub}
-                className="text-slate-300 size-[2.3rem]"
+                className="text-slate-400 size-[2.3rem]"
               />
             </a>
             <a
@@ -57,13 +66,13 @@ export default function App() {
             >
               <FontAwesomeIcon
                 icon={faLinkedin}
-                className="text-slate-300 size-[2.3rem]"
+                className="text-slate-400 size-[2.3rem]"
               />
             </a>
             <a href="https://www.instagram.com/selimaj.dev/" target="blank_">
               <FontAwesomeIcon
                 icon={faInstagram}
-                className="text-slate-300 size-[2.3rem]"
+                className="text-slate-400 size-[2.3rem]"
               />
             </a>
           </div>
@@ -111,7 +120,9 @@ export default function App() {
           />
         </section>
         <footer className="mt-8 border-t pt-3 pb-8">
-          If you see this i ❤️ you
+          <p className="flex gap-1 items-center">
+            If you see this i <HeartIcon className="size-4" /> you
+          </p>
           <p className="text-slate-300 mx-auto w-max mt-2">
             © 2025 Klesti. All rights reserved.
           </p>

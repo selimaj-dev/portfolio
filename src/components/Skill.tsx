@@ -22,7 +22,7 @@ export default function Skill({
 
       <FontAwesomeIcon
         icon={icon}
-        className={`text-gray-300 ${classInsert} size-[2.3rem]`}
+        className={`text-slate-400 ${classInsert} size-[2.3rem]`}
       />
     </div>
   );
