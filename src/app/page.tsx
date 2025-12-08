@@ -54,7 +54,7 @@ export default function App() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-transparent">
           {/* socials */}
           <div className="pt-5 flex flex-row gap-5 w-max">
-            <a href="https://github.com/kleo-dev/" target="blank_">
+            <a href="https://github.com/selimaj-dev/" target="blank_">
               <FontAwesomeIcon
                 icon={faGithub}
                 className="text-slate-400 size-[2.3rem]"
@@ -100,7 +100,7 @@ export default function App() {
         <section className="mt-4">
           <GitHubCalendar
             hideTotalCount
-            username="kleo-dev"
+            username="selimaj-dev"
             theme={{
               light: [
                 "rgba(255, 255, 255, 0.1)",

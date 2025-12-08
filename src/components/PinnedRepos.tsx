@@ -142,7 +142,7 @@ export default function PinnedRepos() {
     const [pinned, setPinned] = useState<PinnedRepo[]>([]);
 
     useEffect(() => {
-      fetch("https://pinned.berrysauce.dev/get/kleo-dev")
+      fetch("https://pinned.berrysauce.dev/get/selimaj-dev")
         .then((r) => {
           r.json()
             .then((p) => {

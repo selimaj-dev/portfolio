@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
-  const username = "kleo-dev";
+  const username = "selimaj-dev";
   const token = process.env.GITHUB_TOKEN;
 
   const query = `
