@@ -159,18 +159,19 @@ export default function PinnedRepos() {
 
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-transparent">
-        {pinned.map((repo, i) => (
-          <Repo
-            key={i}
-            author={repo.author}
-            name={repo.name}
-            description={repo.description}
-            language={repo.language}
-            stars={repo.stars}
-            forks={repo.forks}
-            href={`https://github.com/${repo.author}/${repo.name}`}
-          />
-        ))}
+        {pinned &&
+          pinned.map((repo, i) => (
+            <Repo
+              key={i}
+              author={repo.author}
+              name={repo.name}
+              description={repo.description}
+              language={repo.language}
+              stars={repo.stars}
+              forks={repo.forks}
+              href={`https://github.com/${repo.author}/${repo.name}`}
+            />
+          ))}
       </div>
     );
   } catch (e: any) {
