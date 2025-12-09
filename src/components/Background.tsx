@@ -16,7 +16,7 @@ export default function Background({
         }}
       />
 
-      <div className="relative z-50 overflow-y-scroll">{children}</div>
+      <div className="relative z-50 overflow-y-scroll overflow-x-hidden">{children}</div>
     </div>
   );
 }

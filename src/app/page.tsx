@@ -170,29 +170,32 @@ export default function App() {
 
         <motion.section
           className="mt-4"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          variants={fadeInUp}
+          initial="hidden"
+          animate="show"
         >
-          <GitHubCalendar
-            // hideTotalCount
-            username="selimaj-dev"
-            theme={{
-              light: [
-                "rgba(255, 255, 255, 0.1)",
-                "rgba(255, 255, 255, 0.3)",
-                "rgba(255, 255, 255, 0.5)",
-                "rgba(255, 255, 255, 0.7)",
-                "rgba(255, 255, 255, 1)",
-              ],
-              dark: [
-                "rgba(255, 255, 255, 0.1)",
-                "rgba(255, 255, 255, 0.3)",
-                "rgba(255, 255, 255, 0.5)",
-                "rgba(255, 255, 255, 0.7)",
-                "rgba(255, 255, 255, 1)",
-              ],
-            }}
-          />
+          <motion.div variants={fadeInUp}>
+            <GitHubCalendar
+              // hideTotalCount
+              username="selimaj-dev"
+              theme={{
+                light: [
+                  "rgba(255, 255, 255, 0.1)",
+                  "rgba(255, 255, 255, 0.3)",
+                  "rgba(255, 255, 255, 0.5)",
+                  "rgba(255, 255, 255, 0.7)",
+                  "rgba(255, 255, 255, 1)",
+                ],
+                dark: [
+                  "rgba(255, 255, 255, 0.1)",
+                  "rgba(255, 255, 255, 0.3)",
+                  "rgba(255, 255, 255, 0.5)",
+                  "rgba(255, 255, 255, 0.7)",
+                  "rgba(255, 255, 255, 1)",
+                ],
+              }}
+            />
+          </motion.div>
         </motion.section>
 
         {/* FOOTER */}
@@ -205,10 +208,10 @@ export default function App() {
           >
             If you see this i{" "}
             <motion.span
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ repeat: Infinity, duration: 1.3 }}
+              animate={{ scale: [1, 1.16, 1] }}
+              transition={{ repeat: Infinity, duration: 1.0 }}
             >
-              <HeartIcon className="size-4" />
+              <HeartIcon className="size-4 text-slate-300" />
             </motion.span>{" "}
             you
           </motion.p>
