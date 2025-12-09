@@ -34,7 +34,7 @@ export default function App() {
 
   return (
     <motion.div
-      className="w-full max-w-screen-lg mx-auto"
+      className="w-full max-w-screen-lg mx-auto mt-10"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
