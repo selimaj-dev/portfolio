@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { fadeInUp, fadeInUp2, staggerContainer } from "./effects";
 
 type PinnedRepo = {
   author: string;
@@ -21,22 +23,12 @@ export function Repo({
   href,
 }: PinnedRepo) {
   return (
-    <div
-      className={`
-        group
-        relative
-        flex
-        size-full
-        overflow-hidden
-        rounded-xl
-        h-full
-        border
-        border-slate-400
-        hover:shadow-md
-        transition-shadow
-        duration-300
-        backdrop-blur-[2px]
-        `}
+    <motion.div
+      variants={fadeInUp2}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      className="group relative flex size-full overflow-hidden rounded-xl h-full border border-slate-400 hover:shadow-md transition-shadow duration-300 backdrop-blur-[2px]"
     >
       <div className="w-full">
         <div className="rounded-xl border text-card-foreground shadow h-full bg-transparent border-none flex flex-col">
@@ -133,7 +125,7 @@ export function Repo({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -158,7 +150,13 @@ export default function PinnedRepos() {
     });
 
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-transparent">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-transparent"
+      >
         {pinned &&
           pinned.map((repo, i) => (
             <Repo
@@ -172,7 +170,7 @@ export default function PinnedRepos() {
               href={`https://github.com/${repo.author}/${repo.name}`}
             />
           ))}
-      </div>
+      </motion.div>
     );
   } catch (e: any) {
     return <p>{e.toString()}</p>;
