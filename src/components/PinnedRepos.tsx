@@ -147,7 +147,7 @@ export default function PinnedRepos() {
         .catch((e) => {
           console.error(e);
         });
-    });
+    }, []);
 
     return (
       <motion.div
