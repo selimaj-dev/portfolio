@@ -57,7 +57,7 @@ export default function App() {
           animate="show"
           transition={{ delay: 0.15 }}
         >
-          A 15 year old Software Engineer from Tirane, Albania, with 6 years of
+          A 16 year old Software Engineer from Tirane, Albania, with 6 years of
           experience, specializing in full-stack web development, desktop
           applications, TUI apps, and hacking. I also have a deep interest in
           low-level programming.
