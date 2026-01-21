@@ -3,7 +3,12 @@
 import { Check, ArrowRight, Zap, Crown, Rocket } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { staggerContainer, fadeInUp } from "@/lib/animations";
+import {
+  staggerContainer,
+  fadeInUp,
+  cardReveal,
+  slowFloat,
+} from "@/lib/animations";
 
 const plans = [
   {
@@ -102,10 +107,22 @@ export default function Pricing() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-24 pb-16 bg-background relative overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      <motion.section
+        className="pt-24 pb-16 bg-background relative overflow-hidden"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
+          variants={slowFloat}
+        />
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
+          <motion.div
+            variants={fadeInUp}
+            className="max-w-3xl mx-auto text-center"
+          >
             <span className="text-accent text-sm font-medium uppercase tracking-wider">
               Pricing
             </span>
@@ -117,17 +134,24 @@ export default function Pricing() {
               Choose a plan that fits your needs. Every project receives the
               same attention to detail and commitment to excellence.
             </p>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Pricing Cards */}
-      <section className="py-16 bg-card/50">
+      <motion.section
+        className="py-16 bg-card/50"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:px-32 lg:px-0 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {plans.map((plan) => (
-              <div
+            {plans.map((plan, index) => (
+              <motion.div
                 key={plan.name}
+                variants={cardReveal}
                 className={`relative glass-card rounded-2xl p-8 flex flex-col transition-all duration-300 ${
                   plan.popular
                     ? "ring-2 ring-accent lg:scale-110"
@@ -218,16 +242,22 @@ export default function Pricing() {
                     <ArrowRight className="w-4 h-4" />
                   </motion.span>
                 </motion.a>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Services */}
-      <section className="py-24 bg-background">
+      <motion.section
+        className="py-24 bg-background"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <div className="container mx-auto px-6">
-          <div className="max-w-2xl mb-16">
+          <motion.div variants={fadeInUp} className="max-w-2xl mb-16">
             <span className="text-accent text-sm font-medium uppercase tracking-wider">
               Services
             </span>
@@ -238,14 +268,17 @@ export default function Pricing() {
               From concept to deployment, I provide end-to-end development
               services tailored to your needs.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={staggerContainer}
+          >
             {services.map((service, index) => (
-              <div
+              <motion.div
                 key={service.title}
+                variants={fadeInUp}
                 className="glass-card rounded-2xl p-6 hover-lift group"
-                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
                   {service.title}
@@ -253,17 +286,29 @@ export default function Pricing() {
                 <p className="text-muted-foreground text-sm">
                   {service.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact CTA */}
-      <section className="py-24 bg-card/50 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/5 rounded-full blur-3xl" />
+      <motion.section
+        className="py-24 bg-card/50 relative overflow-hidden"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <motion.div
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/5 rounded-full blur-3xl"
+          variants={slowFloat}
+        />
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
+          <motion.div
+            variants={fadeInUp}
+            className="max-w-3xl mx-auto text-center"
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Have a Custom Project in Mind?
             </h2>
@@ -271,16 +316,17 @@ export default function Pricing() {
               Let's discuss your requirements and create a tailored solution
               that exceeds expectations.
             </p>
-            <a
+            <motion.a
               href="mailto:contact@selimaj.dev"
+              whileHover={{ y: -4, scale: 1.03 }}
               className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-xl font-medium hover:bg-accent/90 transition-all glow-gold"
             >
               Schedule a Call
               <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
