@@ -3,6 +3,7 @@
 import { Check, ArrowRight, Zap, Crown, Rocket } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { staggerContainer, fadeInUp } from "@/lib/animations";
 
 const plans = [
   {
@@ -94,42 +95,6 @@ const services = [
       "Technical guidance and architecture planning for your projects.",
   },
 ];
-
-const pageVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-const sectionVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1], // premium ease
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20, scale: 0.98 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.45,
-      ease: "easeOut",
-    },
-  },
-};
 
 export default function Pricing() {
   const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
