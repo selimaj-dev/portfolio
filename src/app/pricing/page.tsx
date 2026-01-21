@@ -7,16 +7,17 @@ import { useState } from "react";
 const plans = [
   {
     name: "Starter",
-    description: "Perfect for small projects and quick fixes",
+    description: "Small, clearly defined tasks and improvements",
     price: "$500",
     period: "project",
     icon: Zap,
     features: [
-      "Single page application",
-      "Responsive design",
-      "Basic animations",
-      "2 revision rounds",
-      "1 week delivery",
+      "Single feature or small tool",
+      "Bug fixes or minor enhancements",
+      "Basic frontend or backend work",
+      "Limited scope (no architecture changes)",
+      "1 revision round",
+      "Async communication",
       "Source code included",
     ],
     cta: "Get Started",
@@ -24,38 +25,38 @@ const plans = [
   },
   {
     name: "Professional",
-    description: "For complex applications and systems",
-    price: "$2,000",
+    description: "Product features, MVPs, and system components",
+    price: "$2,000+",
     period: "project",
     icon: Crown,
     features: [
-      "Multi-page application",
-      "Custom backend integration",
-      "Advanced animations & UI",
-      "5 revision rounds",
-      "2-3 weeks delivery",
-      "Full source code & docs",
-      "1 month support",
-      "Performance optimization",
+      "Multi-feature application or system module",
+      "Backend services or APIs (Rust, Node, etc.)",
+      "CLI or TUI applications",
+      "Frontend integration where needed",
+      "Architecture and technical decisions",
+      "2–3 revision rounds",
+      "Documentation for delivered components",
+      "Performance and reliability considerations",
     ],
     cta: "Start Project",
     popular: true,
   },
   {
     name: "Enterprise",
-    description: "Full-scale systems and ongoing partnership",
+    description: "Long-term systems work and technical ownership",
     price: "Custom",
     period: "quote",
     icon: Rocket,
     features: [
-      "Complex systems architecture",
-      "Low-level development",
-      "TUI/CLI applications",
-      "Unlimited revisions",
-      "Priority support",
-      "Full documentation",
-      "Training & onboarding",
-      "Long-term partnership",
+      "Large or distributed system design",
+      "Cross-team or multi-stakeholder coordination",
+      "Ongoing development and refactoring",
+      "System audits and performance reviews",
+      "Internal tooling and automation",
+      "Priority access and scheduling",
+      "Extended documentation and knowledge transfer",
+      "Training, onboarding, and long-term support",
     ],
     cta: "Contact Me",
     popular: false,
@@ -76,7 +77,7 @@ const services = [
   {
     title: "TUI/CLI Tools",
     description:
-      "Beautiful terminal user interfaces and command-line tools that developers love.",
+      "Beautiful terminal user interfaces and command-line tools with my own TUI framework that developers love.",
   },
   {
     title: "API Development",
@@ -85,7 +86,7 @@ const services = [
   {
     title: "DevOps & Deployment",
     description:
-      "Docker, CI/CD pipelines, and self-hosted deployment solutions.",
+      "Docker, CI/CD pipelines, and self-hosted deployment solutions with my own infrastructure.",
   },
   {
     title: "Consulting",
@@ -122,13 +123,13 @@ export default function Pricing() {
       {/* Pricing Cards */}
       <section className="py-16 bg-card/50">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:px-32 lg:px-0 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {plans.map((plan) => (
               <div
                 key={plan.name}
                 className={`relative glass-card rounded-2xl p-8 flex flex-col transition-all duration-300 ${
                   plan.popular
-                    ? "ring-2 ring-accent scale-105 md:scale-110"
+                    ? "ring-2 ring-accent lg:scale-110"
                     : "hover:ring-1 hover:ring-accent/30"
                 } ${hoveredPlan === plan.name ? "glow-gold" : ""}`}
                 onMouseEnter={() => setHoveredPlan(plan.name)}
