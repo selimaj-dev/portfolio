@@ -1,8 +1,8 @@
 "use client";
 
-import { Layout } from "@/components/layout/Layout";
 import { Check, ArrowRight, Zap, Crown, Rocket } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const plans = [
   {
@@ -95,11 +95,47 @@ const services = [
   },
 ];
 
+const pageVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1], // premium ease
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.45,
+      ease: "easeOut",
+    },
+  },
+};
+
 export default function Pricing() {
   const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
 
   return (
-    <Layout>
+    <>
       {/* Hero */}
       <section className="pt-24 pb-16 bg-background relative overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
@@ -189,17 +225,34 @@ export default function Pricing() {
                   ))}
                 </ul>
 
-                <a
+                <motion.a
                   href="mailto:contact@selimaj.dev"
-                  className={`mt-auto w-full flex items-center justify-center gap-2 py-3 rounded-xl font-medium transition-all ${
+                  initial="initial"
+                  whileHover="hover"
+                  className={`group mt-auto w-full flex items-center justify-center gap-2 py-3 rounded-xl font-medium transition-all ${
                     plan.popular
                       ? "bg-accent text-accent-foreground hover:bg-accent/90"
                       : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
                   }`}
                 >
                   {plan.cta}
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+
+                  <motion.span
+                    variants={{
+                      initial: { x: 0 },
+                      hover: {
+                        x: 6,
+                        transition: {
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 20,
+                        },
+                      },
+                    }}
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.span>
+                </motion.a>
               </div>
             ))}
           </div>
@@ -263,6 +316,6 @@ export default function Pricing() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
