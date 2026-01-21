@@ -126,7 +126,7 @@ export default function Pricing() {
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative glass-card rounded-2xl p-8 transition-all duration-300 ${
+                className={`relative glass-card rounded-2xl p-8 flex flex-col transition-all duration-300 ${
                   plan.popular
                     ? "ring-2 ring-accent scale-105 md:scale-110"
                     : "hover:ring-1 hover:ring-accent/30"
@@ -190,7 +190,7 @@ export default function Pricing() {
 
                 <a
                   href="mailto:contact@selimaj.dev"
-                  className={`w-full flex items-center justify-center gap-2 py-3 rounded-xl font-medium transition-all ${
+                  className={`mt-auto w-full flex items-center justify-center gap-2 py-3 rounded-xl font-medium transition-all ${
                     plan.popular
                       ? "bg-accent text-accent-foreground hover:bg-accent/90"
                       : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
