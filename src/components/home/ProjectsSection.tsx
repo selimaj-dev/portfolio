@@ -1,4 +1,8 @@
+"use client";
+
 import { ExternalLink, Github, Star } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const projects = [
   {
@@ -56,10 +60,16 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section className="py-24 bg-card/50">
+    <motion.section
+      className="py-24 bg-card/50"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="max-w-2xl mb-16">
+        <motion.div className="max-w-2xl mb-16" variants={fadeInUp}>
           <span className="text-accent text-sm font-medium uppercase tracking-wider">
             Portfolio
           </span>
@@ -71,15 +81,16 @@ export function ProjectsSection() {
             showcase my skills in systems programming, web development, and
             tooling.
           </p>
-        </div>
+        </motion.div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <article
+            <motion.article
               key={project.name}
               className={"group glass-card rounded-2xl p-6 hover-lift"}
-              style={{ animationDelay: `${index * 100}ms` }}
+              variants={fadeInUp}
+              custom={index * 0.1}
             >
               {/* Header */}
               <div className="flex items-start justify-between mb-4">
@@ -137,12 +148,16 @@ export function ProjectsSection() {
                   View
                 </a>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 
         {/* View All CTA */}
-        <div className="text-center mt-12">
+        <motion.div
+          className="text-center mt-12"
+          variants={fadeInUp}
+          custom={0.8}
+        >
           <a
             href="https://github.com/selimaj-dev?tab=repositories"
             target="_blank"
@@ -152,8 +167,8 @@ export function ProjectsSection() {
             View all projects on GitHub
             <ExternalLink className="w-4 h-4" />
           </a>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

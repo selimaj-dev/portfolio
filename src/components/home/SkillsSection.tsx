@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
+
 const skills = [
   {
     category: "Languages",
@@ -39,26 +44,33 @@ const stats = [
 
 export function SkillsSection() {
   return (
-    <section className="py-24 bg-background">
+    <motion.section
+      className="py-24 bg-background"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <div className="container mx-auto px-6">
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {stats.map((stat, index) => (
-            <div
+            <motion.div
               key={stat.label}
               className="text-center p-6 glass-card rounded-2xl hover-lift"
-              style={{ animationDelay: `${index * 100}ms` }}
+              variants={fadeInUp}
+              custom={index * 0.1}
             >
               <div className="text-3xl md:text-4xl font-bold text-gradient-gold mb-2">
                 {stat.value}
               </div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Section Header */}
-        <div className="max-w-2xl mb-16">
+        <motion.div className="max-w-2xl mb-16" variants={fadeInUp}>
           <span className="text-accent text-sm font-medium uppercase tracking-wider">
             Expertise
           </span>
@@ -69,15 +81,16 @@ export function SkillsSection() {
             From low-level systems programming to modern web development, I
             bring a diverse skill set to every project.
           </p>
-        </div>
+        </motion.div>
 
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skills.map((category, categoryIndex) => (
-            <div
+            <motion.div
               key={category.category}
               className="glass-card rounded-2xl p-6"
-              style={{ animationDelay: `${categoryIndex * 150}ms` }}
+              variants={fadeInUp}
+              custom={categoryIndex * 0.15}
             >
               <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent" />
@@ -95,18 +108,21 @@ export function SkillsSection() {
                       </span>
                     </div>
                     <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-accent rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
+                      <motion.div
+                        className="h-full bg-accent rounded-full"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        viewport={{ once: true }}
                       />
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
