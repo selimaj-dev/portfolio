@@ -1,16 +1,26 @@
 "use client";
 
-import { ExternalLink, Github, Star } from "lucide-react";
+import { BookOpen, ExternalLink, Github, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const projects = [
+  {
+    name: "Axiom Chat",
+    description: "A modern, feature-rich chat application built for teams.",
+    tech: ["TypeScript", "Real-time", "WebSockets"],
+    stars: 1,
+    github: "https://github.com/AxiomChat/axiom",
+    website: "https://vxchat.netlify.app/",
+    featured: true,
+  },
   {
     name: "DockShip",
     description: "A powerful self-hosted Deployment Platform for modern teams.",
     tech: ["TypeScript", "Docker", "React"],
     stars: 1,
     github: "https://github.com/orus-dev/dockship",
+    docs: "https://github.com/orus-dev/dockship/wiki",
     featured: true,
   },
   {
@@ -20,6 +30,7 @@ const projects = [
     tech: ["Rust", "TUI", "Systems"],
     stars: 8,
     github: "https://github.com/osui-rs/osui",
+    docs: "https://osui.netlify.app/",
     featured: true,
   },
   {
@@ -29,7 +40,7 @@ const projects = [
     tech: ["JavaScript", "Electron", "Linux"],
     stars: 23,
     github: "https://github.com/selimaj-dev/linear-linux",
-    featured: true,
+    featured: false,
   },
   {
     name: "Saturn Client",
@@ -38,14 +49,6 @@ const projects = [
     tech: ["Java", "Minecraft", "Gaming"],
     stars: 3,
     github: "https://github.com/saturnclientmc/saturnclient",
-    featured: false,
-  },
-  {
-    name: "Axiom Chat",
-    description: "A modern, feature-rich chat application built for teams.",
-    tech: ["TypeScript", "Real-time", "WebSockets"],
-    stars: 1,
-    github: "https://github.com/AxiomChat/axiom",
     featured: false,
   },
   {
@@ -138,15 +141,28 @@ export function ProjectsSection() {
                   <Github className="w-4 h-4" />
                   Source
                 </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  View
-                </a>
+                {project.website && (
+                  <a
+                    href={project.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    View
+                  </a>
+                )}
+                {project.docs && (
+                  <a
+                    href={project.docs}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    Docs
+                  </a>
+                )}
               </div>
             </motion.article>
           ))}
