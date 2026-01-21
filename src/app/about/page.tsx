@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Github,
   Linkedin,
@@ -21,6 +23,16 @@ import {
   SiLinux,
 } from "@icons-pack/react-simple-icons";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import {
+  staggerContainer,
+  fadeInUp,
+  fadeIn,
+  cardReveal,
+  timelineItemLeft,
+  timelineItemRight,
+  slowFloat,
+} from "@/lib/animations";
 
 const timeline = [
   {
@@ -122,52 +134,78 @@ export default function About() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-24 pb-16 bg-background relative overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      <motion.section
+        className="pt-24 pb-16 bg-background relative overflow-hidden"
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div
+          className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
+          variants={slowFloat}
+        />
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Image/Avatar */}
-            <div className="relative">
-              <div className="aspect-square max-w-md mx-auto rounded-3xl overflow-hidden glass-card p-2">
-                <div className="w-full h-full rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
-                  <img
-                    src="https://avatars.githubusercontent.com/u/103524696?v=4"
-                    alt="Klesti Selimaj"
-                    className="w-full h-full object-cover rounded-2xl"
-                  />
+            <motion.div variants={fadeInUp}>
+              <div className="relative">
+                <div className="aspect-square max-w-md mx-auto rounded-3xl overflow-hidden glass-card p-2">
+                  <div className="w-full h-full rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
+                    <img
+                      src="https://avatars.githubusercontent.com/u/103524696?v=4"
+                      alt="Klesti Selimaj"
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                  </div>
                 </div>
+                {/* Floating badges */}
+                <motion.div
+                  className="absolute -bottom-4 -right-4 glass-card rounded-xl px-4 py-2 flex items-center gap-2"
+                  variants={fadeInUp}
+                  transition={{ delay: 0.6, type: "spring" }}
+                >
+                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                  <span className="text-sm text-foreground">Available</span>
+                </motion.div>
               </div>
-              {/* Floating badges */}
-              <div className="absolute -bottom-4 -right-4 glass-card rounded-xl px-4 py-2 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                <span className="text-sm text-foreground">Available</span>
-              </div>
-            </div>
+            </motion.div>
 
             {/* Content */}
-            <div>
+            <motion.div variants={staggerContainer}>
               <span className="text-accent text-sm font-medium uppercase tracking-wider">
                 About Me
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
+              <motion.h1
+                variants={fadeInUp}
+                className="text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6"
+              >
                 Hey, I'm{" "}
                 <span className="text-gradient-gold">Klesti Selimaj</span>
-              </h1>
-              <p className="text-lg text-muted-foreground mb-6">
+              </motion.h1>
+              <motion.p
+                variants={fadeInUp}
+                className="text-lg text-muted-foreground mb-6"
+              >
                 A 16-year-old software engineer from Albania with 6+ years of
                 experience. I'm passionate about building things that matter,
                 from low-level systems to beautiful user interfaces.
-              </p>
-              <p className="text-muted-foreground mb-8">
+              </motion.p>
+              <motion.p
+                variants={fadeInUp}
+                className="text-muted-foreground mb-8"
+              >
                 My journey started at age 10 when I had my first laptop (a Asus
                 with pre installed endless linux), and since then I've been
                 hooked on computers, but i didn't exactly know what programming
                 was but i was doing it unconsciously, making winforms apps in c#
                 with visual studio.
-              </p>
+              </motion.p>
 
               {/* Quick Info */}
-              <div className="flex flex-wrap gap-4 mb-8">
+              <motion.div
+                variants={fadeInUp}
+                className="flex flex-wrap gap-4 mb-8"
+              >
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <MapPin className="w-4 h-4 text-accent" />
                   <span>Albania</span>
@@ -180,55 +218,30 @@ export default function About() {
                   <Crown className="w-4 h-4 text-accent" />
                   <span>@orus-dev</span>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Social Links */}
-              <div className="flex items-center gap-4">
-                <a
-                  href="https://github.com/selimaj-dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card p-3 rounded-xl hover:ring-1 hover:ring-accent/30 transition-all"
-                >
-                  <Github className="w-5 h-5 text-foreground" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/klesti-selimaj-7a0162343/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card p-3 rounded-xl hover:ring-1 hover:ring-accent/30 transition-all"
-                >
-                  <Linkedin className="w-5 h-5 text-foreground" />
-                </a>
-                <a
-                  href="https://www.youtube.com/@0xkleo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card p-3 rounded-xl hover:ring-1 hover:ring-accent/30 transition-all"
-                >
-                  <Youtube className="w-5 h-5 text-foreground" />
-                </a>
-                <a
-                  href="https://www.instagram.com/selimaj.dev/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card p-3 rounded-xl hover:ring-1 hover:ring-accent/30 transition-all"
-                >
-                  <Instagram className="w-5 h-5 text-foreground" />
-                </a>
-                <a
-                  href="https://dev.to/selimaj"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card p-3 rounded-xl hover:ring-1 hover:ring-accent/30 transition-all"
-                >
-                  <ExternalLink className="w-5 h-5 text-foreground" />
-                </a>
-              </div>
-            </div>
+              <motion.div
+                variants={fadeInUp}
+                className="flex items-center gap-4"
+              >
+                {[Github, Linkedin, Youtube, Instagram, ExternalLink].map(
+                  (Icon, i) => (
+                    <motion.a
+                      key={i}
+                      whileHover={{ y: -4, scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="glass-card p-3 rounded-xl hover:ring-1 hover:ring-accent/30 transition-all"
+                    >
+                      <Icon className="w-5 h-5 text-foreground" />
+                    </motion.a>
+                  ),
+                )}
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Tech Stack */}
       <section className="py-24 bg-card/50">
@@ -246,12 +259,18 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {techStack.map((tech, index) => (
-              <div
+              <motion.div
                 key={tech.name}
+                variants={cardReveal}
                 className="glass-card rounded-2xl p-6 text-center hover-lift group"
-                style={{ animationDelay: `${index * 50}ms` }}
               >
                 <div className={cn("text-4xl mb-3 mx-auto w-max", tech.color)}>
                   {tech.icon}
@@ -259,9 +278,9 @@ export default function About() {
                 <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors">
                   {tech.name}
                 </h3>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -280,12 +299,18 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {achievements.map((achievement, index) => (
-              <div
+              <motion.div
                 key={achievement.title}
+                variants={cardReveal}
                 className="glass-card rounded-2xl p-6 text-center hover-lift"
-                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="text-4xl mb-4">{achievement.icon}</div>
                 <h3 className="font-semibold text-foreground mb-2">
@@ -294,9 +319,9 @@ export default function About() {
                 <p className="text-sm text-muted-foreground">
                   {achievement.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -318,10 +343,15 @@ export default function About() {
 
           <div className="max-w-3xl mx-auto">
             {timeline.map((item, index) => (
-              <div
+              <motion.div
                 key={item.year}
+                variants={
+                  index % 2 === 0 ? timelineItemLeft : timelineItemRight
+                }
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
                 className="relative flex gap-6 pb-12 last:pb-0"
-                style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Line */}
                 {index !== timeline.length - 1 && (
@@ -351,7 +381,7 @@ export default function About() {
                     {item.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -359,7 +389,10 @@ export default function About() {
 
       {/* Philosophy */}
       <section className="py-24 bg-background relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl"
+          variants={slowFloat}
+        />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-accent text-sm font-medium uppercase tracking-wider">
