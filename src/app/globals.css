@@ -1,41 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Kodchasan Medium';
-  src: url('/fonts/Kodchasan-Medium.ttf');
-}
+/* Premium Monochromatic Design System with Gold Accents */
 
-@font-face {
-  font-family: 'Kodchasan';
-  src: url('/fonts/Kodchasan-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'Kodchasan Semi Bold';
-  src: url('/fonts/Kodchasan-SemiBold.ttf');
-}
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 43 41% 59%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 43 41% 59%;
+
+    --radius: 0.75rem;
+
+    /* Premium Gold Tokens */
+    --gold: 43 41% 59%;
+    --gold-light: 43 45% 70%;
+    --gold-dark: 43 38% 45%;
+
+    /* Gradient tokens */
+    --gradient-gold: linear-gradient(135deg, hsl(43 41% 59%), hsl(43 45% 70%));
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 96%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+    --shadow-gold: 0 0 30px -5px hsl(43 41% 59% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 25%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 43 41% 59%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 43 41% 59%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 43 41% 59%;
+
+    /* Premium Gold Tokens (adjusted for dark) */
+    --gold: 43 41% 59%;
+    --gold-light: 43 50% 68%;
+    --gold-dark: 43 35% 48%;
+
+    /* Gradient tokens */
+    --gradient-gold: linear-gradient(135deg, hsl(43 41% 59%), hsl(43 50% 68%));
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 4%), hsl(0 0% 8%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    --shadow-gold: 0 0 40px -5px hsl(43 41% 59% / 0.25);
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 43 41% 59%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 43 41% 59%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: 'Kodchasan Semi Bold', sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-foreground;
+  }
 }
 
-h1 {
-  font-size: 30px;
-  font-weight: bold;
+@layer components {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
+  }
+
+  .border-gradient-gold {
+    border-image: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light))) 1;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 40px -5px hsl(var(--gold) / 0.3);
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-delay-1 {
+    animation: fadeIn 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-3 {
+    animation: fadeIn 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--gold) / 0) 0%,
+      hsl(var(--gold) / 0.3) 50%,
+      hsl(var(--gold) / 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
 }

@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Background from "@/components/Background";
 
 export const metadata: Metadata = {
-  title: "Klesti's Portfolio",
+  title: "Selimaj.dev",
   description: "",
 };
 
@@ -15,11 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-black">
-        <Background>
-          <div className="relative h-screen">{children}</div>
-        </Background>
-      </body>
+      <body className="antialiased bg-black">{children}</body>
     </html>
   );
 }
