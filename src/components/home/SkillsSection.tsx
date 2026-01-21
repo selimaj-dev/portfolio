@@ -33,7 +33,7 @@ const skills = [
 const stats = [
   { label: "Years Experience", value: "6+" },
   { label: "GitHub Followers", value: "32" },
-  { label: "Open Source Projects", value: "10+" },
+  { label: "Open Source Projects", value: "80+" },
   { label: "Technologies Mastered", value: "15+" },
 ];
 
