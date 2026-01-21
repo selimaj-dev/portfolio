@@ -7,23 +7,23 @@ const skills = [
       { name: "JavaScript", level: 95 },
       { name: "Python", level: 80 },
       { name: "Go", level: 75 },
-      { name: "Java", level: 85 },
+      { name: "Java", level: 80 },
     ],
   },
   {
-    category: "Frontend",
+    category: "Web Development",
     items: [
       { name: "React", level: 95 },
       { name: "Next.js", level: 85 },
-      { name: "Tailwind CSS", level: 95 },
+      { name: "Tailwind CSS", level: 80 },
       { name: "Framer Motion", level: 80 },
     ],
   },
   {
     category: "Systems & Tools",
     items: [
-      { name: "Linux", level: 90 },
-      { name: "Docker", level: 85 },
+      { name: "Linux", level: 85 },
+      { name: "Docker", level: 65 },
       { name: "Git", level: 95 },
       { name: "TUI Development", level: 90 },
     ],
