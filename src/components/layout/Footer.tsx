@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -50,6 +51,16 @@ export function Footer() {
                   className="text-sm text-muted-foreground hover:text-accent transition-colors"
                 >
                   Hire Me
+                </Link>
+              </li>
+              <li>
+                <Link
+                  target="_blank"
+                  href="https://ko-fi.com/X8X01OX1WR"
+                  className="text-sm text-muted-foreground hover:text-accent transition-colors flex"
+                >
+                  Support Me on Ko-fi
+                  <ExternalLink className="ml-1.5 w-4 h-4" />
                 </Link>
               </li>
             </ul>
