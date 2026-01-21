@@ -215,7 +215,7 @@ export default function Pricing() {
                 </ul>
 
                 <motion.a
-                  href="mailto:contact@selimaj.dev"
+                  href="mailto:selimaj.dev@proton.me"
                   initial="initial"
                   whileHover="hover"
                   className={`group mt-auto w-full flex items-center justify-center gap-2 py-3 rounded-xl font-medium transition-all ${
@@ -317,7 +317,7 @@ export default function Pricing() {
               that exceeds expectations.
             </p>
             <motion.a
-              href="mailto:contact@selimaj.dev"
+              href="mailto:selimaj.dev@proton.me"
               whileHover={{ y: -4, scale: 1.03 }}
               className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-xl font-medium hover:bg-accent/90 transition-all glow-gold"
             >
