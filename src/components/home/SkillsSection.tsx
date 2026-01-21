@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const skills = [
@@ -21,7 +21,7 @@ const skills = [
       { name: "React", level: 95 },
       { name: "Next.js", level: 85 },
       { name: "Tailwind CSS", level: 80 },
-      { name: "Framer Motion", level: 80 },
+      { name: "Motion", level: 80 },
     ],
   },
   {

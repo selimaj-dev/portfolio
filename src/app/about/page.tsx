@@ -22,8 +22,7 @@ import {
   SiDocker,
   SiLinux,
 } from "@icons-pack/react-simple-icons";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import {
   staggerContainer,
   fadeInUp,
@@ -33,6 +32,7 @@ import {
   timelineItemRight,
   slowFloat,
 } from "@/lib/animations";
+import { cn } from "@/lib/utils";
 
 const timeline = [
   {

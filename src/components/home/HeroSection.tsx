@@ -2,7 +2,7 @@
 
 import { ArrowRight, Github, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { staggerContainer, fadeInUp, slowFloat } from "@/lib/animations";
 
 export function HeroSection() {

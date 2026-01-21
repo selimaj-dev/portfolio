@@ -5,7 +5,7 @@ import { CoffeeIcon, Github, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const navLinks = [
   { href: "/", label: "Home" },

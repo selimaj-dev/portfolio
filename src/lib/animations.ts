@@ -1,4 +1,4 @@
-import { Variants } from "framer-motion";
+import { stagger, Variants } from "motion/react";
 
 /**
  * Container
@@ -7,8 +7,7 @@ export const staggerContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.05,
+      delayChildren: stagger(0.15),
     },
   },
 };
