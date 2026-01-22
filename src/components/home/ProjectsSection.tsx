@@ -111,7 +111,7 @@ export function ProjectsSection() {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+              <h3 className="text-xl font-semibold text-foreground mb-2 transition-colors">
                 {project.name}
               </h3>
               <p className="text-muted-foreground text-sm mb-4 line-clamp-2">

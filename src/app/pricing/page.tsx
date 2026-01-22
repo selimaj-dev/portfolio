@@ -283,7 +283,7 @@ export default function Pricing() {
                 variants={fadeInUp}
                 className="glass-card rounded-2xl p-6 hover-lift group"
               >
-                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+                <h3 className="text-lg font-semibold text-foreground mb-2 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground text-sm">

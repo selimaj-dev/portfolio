@@ -12,7 +12,6 @@ import {
   Trophy,
   Box,
   FileText,
-  Twitter,
 } from "lucide-react";
 import {
   SiRust,
@@ -28,7 +27,6 @@ import { motion } from "motion/react";
 import {
   staggerContainer,
   fadeInUp,
-  fadeIn,
   cardReveal,
   timelineItemLeft,
   timelineItemRight,
@@ -122,34 +120,33 @@ const techStack: {
   { name: "Linux", icon: SiLinux, color: "text-yellow-400" },
 ];
 
-export default function About() {
-  const achievements = [
-    {
-      icon: <Trophy className="w-10 h-10 text-accent mx-auto" />,
-      title: "Top GitHub Contributor in Albania",
-      description:
-        "Ranked #2 nationally based on commits, contributions, and repository activity.",
-    },
-    {
-      icon: <Github className="w-10 h-10 text-accent mx-auto" />,
-      title: "Contributor to 80+ Public Repositories",
-      description:
-        "Actively contributed code to multiple open-source projects.",
-    },
-    {
-      icon: <Box className="w-10 h-10 text-accent mx-auto" />,
-      title: "Built & Deployed 3 Full-Stack Applications",
-      description:
-        "Completed end-to-end development projects using Next.js, React, and Rust.",
-    },
-    {
-      icon: <FileText className="w-10 h-10 text-accent mx-auto" />,
-      title: "Published Technical Guides & Documentation",
-      description:
-        "Authored clear technical documentation and tutorials in public repositories.",
-    },
-  ];
+const achievements = [
+  {
+    icon: Trophy,
+    title: "Top GitHub Contributor in Albania",
+    description:
+      "Ranked #2 nationally based on commits, contributions, and repository activity.",
+  },
+  {
+    icon: Github,
+    title: "Contributor to 80+ Public Repositories",
+    description: "Actively contributed code to multiple open-source projects.",
+  },
+  {
+    icon: Box,
+    title: "Built & Deployed 3 Full-Stack Applications",
+    description:
+      "Completed end-to-end development projects using Next.js, React, and Rust.",
+  },
+  {
+    icon: FileText,
+    title: "Published Technical Guides & Documentation",
+    description:
+      "Authored clear technical documentation and tutorials in public repositories.",
+  },
+];
 
+export default function About() {
   return (
     <>
       {/* Hero */}
@@ -249,7 +246,7 @@ export default function About() {
                     key={i}
                     whileHover={{ y: -1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="glass-card p-3 rounded-xl hover:ring-1 hover:ring-accent/30 transition-colors text-foreground hover:text-gold"
+                    className="glass-card p-3 rounded-xl hover:ring-1 hover:ring-accent/30 transition-colors text-foreground hover:text-accent"
                     href={link}
                     target="_blank"
                   >
@@ -331,7 +328,9 @@ export default function About() {
                 variants={cardReveal}
                 className="glass-card rounded-2xl p-6 text-center hover-lift"
               >
-                <div className="text-4xl mb-4">{achievement.icon}</div>
+                <div className="text-4xl mb-4">
+                  <achievement.icon className="w-10 h-10 text-accent mx-auto" />
+                </div>
                 <h3 className="font-semibold text-foreground mb-2">
                   {achievement.title}
                 </h3>
