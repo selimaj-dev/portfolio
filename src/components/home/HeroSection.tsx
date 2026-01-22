@@ -30,17 +30,6 @@ export function HeroSection() {
           className="max-w-4xl mx-auto text-center"
           variants={staggerContainer}
         >
-          {/* Status Badge */}
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
-            variants={fadeInUp}
-          >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-sm text-muted-foreground">
-              Available for new projects
-            </span>
-          </motion.div>
-
           {/* Main Heading */}
           <motion.h1
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
