@@ -247,13 +247,13 @@ export default function About() {
                 {socialLinks.map(([link, Icon], i) => (
                   <motion.a
                     key={i}
-                    whileHover={{ y: -4, scale: 1.05 }}
+                    whileHover={{ y: -1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="glass-card p-3 rounded-xl hover:ring-1 hover:ring-accent/30 transition-all"
+                    className="glass-card p-3 rounded-xl hover:ring-1 hover:ring-accent/30 transition-colors text-foreground hover:text-gold"
                     href={link}
                     target="_blank"
                   >
-                    <Icon className="w-5 h-5 text-foreground" />
+                    <Icon className="w-5 h-5" />
                   </motion.a>
                 ))}
               </motion.div>
