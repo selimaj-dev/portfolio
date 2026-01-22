@@ -127,12 +127,15 @@ export default function Pricing() {
               Pricing
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
-              Transparent Pricing for{" "}
+              Fair Pricing for{" "}
               <span className="text-gradient-gold">Premium Quality</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Choose a plan that fits your needs. Every project receives the
-              same attention to detail and commitment to excellence.
+              Choose a plan that fits your needs.
+            </p>
+
+            <p className="mt-3 text-sm text-muted-foreground/80">
+              Payments are accepted in crypto.
             </p>
           </motion.div>
         </div>
