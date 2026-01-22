@@ -175,14 +175,14 @@ export default function About() {
                   </div>
                 </div>
                 {/* Floating badges */}
-                <motion.div
+                {/* <motion.div
                   className="absolute -bottom-4 -right-4 glass-card rounded-xl px-4 py-2 flex items-center gap-2"
                   variants={fadeInUp}
                   transition={{ delay: 0.6, type: "spring" }}
                 >
                   <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
                   <span className="text-sm text-foreground">Available</span>
-                </motion.div>
+                </motion.div> */}
               </div>
             </motion.div>
 
