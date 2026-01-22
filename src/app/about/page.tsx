@@ -72,6 +72,17 @@ const timeline = [
   },
 ];
 
+const socialLinks: [
+  string,
+  React.ComponentType<React.SVGProps<SVGSVGElement>>,
+][] = [
+  ["https://github.com/selimaj-dev", Github],
+  ["https://www.linkedin.com/in/klesti-selimaj", Linkedin],
+  ["https://youtube.com/@0xkleo", Youtube],
+  ["https://instagram.com/selimaj.dev", Instagram],
+  ["https://dev.to/selimaj", ExternalLink],
+];
+
 export default function About() {
   const techStack = [
     { name: "Rust", icon: <SiRust />, color: "text-orange-500" },
@@ -225,18 +236,18 @@ export default function About() {
                 variants={fadeInUp}
                 className="flex items-center gap-4"
               >
-                {[Github, Linkedin, Youtube, Instagram, ExternalLink].map(
-                  (Icon, i) => (
-                    <motion.a
-                      key={i}
-                      whileHover={{ y: -4, scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="glass-card p-3 rounded-xl hover:ring-1 hover:ring-accent/30 transition-all"
-                    >
-                      <Icon className="w-5 h-5 text-foreground" />
-                    </motion.a>
-                  ),
-                )}
+                {socialLinks.map(([link, Icon], i) => (
+                  <motion.a
+                    key={i}
+                    whileHover={{ y: -4, scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="glass-card p-3 rounded-xl hover:ring-1 hover:ring-accent/30 transition-all"
+                    href={link}
+                    target="_blank"
+                  >
+                    <Icon className="w-5 h-5 text-foreground" />
+                  </motion.a>
+                ))}
               </motion.div>
             </motion.div>
           </div>
