@@ -14,7 +14,7 @@ const plans = [
   {
     name: "Starter",
     description: "Small, clearly defined tasks and improvements",
-    price: "$500",
+    price: "$499",
     period: "project",
     icon: Zap,
     features: [
@@ -33,7 +33,7 @@ const plans = [
   {
     name: "Professional",
     description: "Product features, MVPs, and system components",
-    price: "$2,000+",
+    price: "$1,999",
     period: "project",
     icon: Crown,
     features: [
