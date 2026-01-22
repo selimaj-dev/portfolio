@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Github, Linkedin, Youtube } from "lucide-react";
+import { ArrowRight, Github, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { staggerContainer, fadeInUp, slowFloat } from "@/lib/animations";
@@ -104,7 +104,7 @@ export function HeroSection() {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/klesti-selimaj-7a0162343/"
+              href="https://www.linkedin.com/in/klesti-selimaj-7a0162343"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors"
@@ -112,12 +112,12 @@ export function HeroSection() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="https://www.youtube.com/@0xkleo"
+              href="https://www.instagram.com/selimaj.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors"
             >
-              <Youtube className="w-5 h-5" />
+              <Instagram className="w-5 h-5" />
             </a>
           </motion.div>
         </motion.div>
