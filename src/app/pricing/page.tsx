@@ -27,7 +27,7 @@ const plans = [
       "Source code included",
       "CLI or TUI applications",
     ],
-    cta: "Get Started",
+    cta: "Contact Me",
     popular: false,
   },
   {
@@ -45,7 +45,7 @@ const plans = [
       "Documentation for delivered components",
       "Performance and reliability considerations",
     ],
-    cta: "Start Project",
+    cta: "Contact Me",
     popular: true,
   },
   {
