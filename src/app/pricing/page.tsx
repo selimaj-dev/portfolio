@@ -14,7 +14,7 @@ const plans = [
   {
     name: "Starter",
     description: "Small, clearly defined tasks and improvements",
-    price: "$500",
+    price: "$499",
     period: "project",
     icon: Zap,
     features: [
@@ -25,27 +25,27 @@ const plans = [
       "1 revision round",
       "Async communication",
       "Source code included",
+      "CLI or TUI applications",
     ],
-    cta: "Get Started",
+    cta: "Contact Me",
     popular: false,
   },
   {
     name: "Professional",
     description: "Product features, MVPs, and system components",
-    price: "$2,000+",
+    price: "$1,999",
     period: "project",
     icon: Crown,
     features: [
       "Multi-feature application or system module",
       "Backend services or APIs (Rust, Node, etc.)",
-      "CLI or TUI applications",
       "Frontend integration where needed",
       "Architecture and technical decisions",
-      "2–3 revision rounds",
+      "2-3 revision rounds",
       "Documentation for delivered components",
       "Performance and reliability considerations",
     ],
-    cta: "Start Project",
+    cta: "Contact Me",
     popular: true,
   },
   {
@@ -127,12 +127,15 @@ export default function Pricing() {
               Pricing
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
-              Transparent Pricing for{" "}
+              Fair Pricing for{" "}
               <span className="text-gradient-gold">Premium Quality</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Choose a plan that fits your needs. Every project receives the
-              same attention to detail and commitment to excellence.
+              Choose a plan that fits your needs.
+            </p>
+
+            <p className="mt-3 text-sm text-muted-foreground/80">
+              Payments are accepted in crypto.
             </p>
           </motion.div>
         </div>
@@ -280,7 +283,7 @@ export default function Pricing() {
                 variants={fadeInUp}
                 className="glass-card rounded-2xl p-6 hover-lift group"
               >
-                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+                <h3 className="text-lg font-semibold text-foreground mb-2 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground text-sm">

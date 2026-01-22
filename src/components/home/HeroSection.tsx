@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Github, Linkedin, Youtube } from "lucide-react";
+import { ArrowRight, Github, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { staggerContainer, fadeInUp, slowFloat } from "@/lib/animations";
@@ -30,26 +30,15 @@ export function HeroSection() {
           className="max-w-4xl mx-auto text-center"
           variants={staggerContainer}
         >
-          {/* Status Badge */}
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
-            variants={fadeInUp}
-          >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-sm text-muted-foreground">
-              Available for new projects
-            </span>
-          </motion.div>
-
           {/* Main Heading */}
           <motion.h1
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
             variants={fadeInUp}
           >
             <span className="text-foreground">Building</span>{" "}
-            <span className="text-gradient-gold">exceptional</span>
+            <span className="text-gradient-gold">powerful</span>
             <br />
-            <span className="text-foreground">digital experiences</span>
+            <span className="text-foreground">digital products</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -62,7 +51,7 @@ export function HeroSection() {
             <span className="text-foreground font-medium">Klesti Selimaj</span>,
             a 16-year-old software engineer with 6+ years of experience.
             Passionate about low-level systems, modern web apps, and crafting
-            tools that make a difference.
+            tools.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -79,13 +68,11 @@ export function HeroSection() {
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
-              href="https://github.com/selimaj-dev"
-              target="_blank"
+              href="/about"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-secondary text-secondary-foreground px-8 py-4 rounded-xl font-medium hover:bg-secondary/80 transition-colors"
             >
-              <Github className="w-4 h-4" />
-              View GitHub
+              About Me
             </a>
           </motion.div>
 
@@ -104,7 +91,7 @@ export function HeroSection() {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/klesti-selimaj-7a0162343/"
+              href="https://www.linkedin.com/in/klesti-selimaj-7a0162343"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors"
@@ -112,12 +99,12 @@ export function HeroSection() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="https://www.youtube.com/@0xkleo"
+              href="https://www.instagram.com/selimaj.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors"
             >
-              <Youtube className="w-5 h-5" />
+              <Instagram className="w-5 h-5" />
             </a>
           </motion.div>
         </motion.div>

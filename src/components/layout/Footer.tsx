@@ -20,8 +20,6 @@ export function Footer() {
             </Link>
             <p className="text-muted-foreground text-sm max-w-sm">
               Building digital experiences with precision and passion.
-              Specializing in low-level systems, modern web applications, and
-              everything in between.
             </p>
           </div>
 
@@ -118,10 +116,10 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             © {currentYear} Klesti Selimaj. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          {/* <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             Available for work
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
