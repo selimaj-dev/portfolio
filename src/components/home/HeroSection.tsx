@@ -79,13 +79,11 @@ export function HeroSection() {
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
-              href="https://github.com/selimaj-dev"
-              target="_blank"
+              href="/about"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-secondary text-secondary-foreground px-8 py-4 rounded-xl font-medium hover:bg-secondary/80 transition-colors"
             >
-              <Github className="w-4 h-4" />
-              View GitHub
+              About Me
             </a>
           </motion.div>
 
