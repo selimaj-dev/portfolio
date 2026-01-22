@@ -8,7 +8,7 @@ import { staggerContainer, fadeInUp, slowFloat } from "@/lib/animations";
 export function HeroSection() {
   return (
     <motion.section
-      className="relative min-h-svh flex items-center justify-center overflow-hidden"
+      className="relative flex items-center justify-center overflow-hidden min-h-[40rem] h-[calc(100svh-66px)]"
       variants={staggerContainer}
       initial="hidden"
       whileInView="visible"
@@ -16,14 +16,8 @@ export function HeroSection() {
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
-      <motion.div
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
-        variants={slowFloat}
-      />
-      <motion.div
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
-        variants={slowFloat}
-      />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -112,7 +106,7 @@ export function HeroSection() {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 mb-14"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
       >
