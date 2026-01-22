@@ -12,6 +12,7 @@ import {
   Trophy,
   Box,
   FileText,
+  Twitter,
 } from "lucide-react";
 import {
   SiRust,
@@ -21,6 +22,7 @@ import {
   SiPython,
   SiDocker,
   SiLinux,
+  SiX,
 } from "@icons-pack/react-simple-icons";
 import { motion } from "motion/react";
 import {
@@ -33,6 +35,7 @@ import {
   slowFloat,
 } from "@/lib/animations";
 import { cn } from "@/lib/utils";
+import { ComponentType, SVGProps } from "react";
 
 const timeline = [
   {
@@ -77,44 +80,49 @@ const socialLinks: [
   React.ComponentType<React.SVGProps<SVGSVGElement>>,
 ][] = [
   ["https://github.com/selimaj-dev", Github],
+  ["https://instagram.com/selimaj.dev", Instagram],
+  ["https://x.com/selimajdev", SiX],
   ["https://www.linkedin.com/in/klesti-selimaj", Linkedin],
   ["https://youtube.com/@0xkleo", Youtube],
-  ["https://instagram.com/selimaj.dev", Instagram],
   ["https://dev.to/selimaj", ExternalLink],
 ];
 
-export default function About() {
-  const techStack = [
-    { name: "Rust", icon: <SiRust />, color: "text-orange-500" },
-    { name: "TypeScript", icon: <SiTypescript />, color: "text-blue-500" },
-    { name: "React", icon: <SiReact />, color: "text-cyan-500" },
-    { name: "Go", icon: <SiGo />, color: "text-cyan-400" },
-    { name: "Python", icon: <SiPython />, color: "text-yellow-500" },
-    {
-      name: "Java",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M8.717 18.555s-.922.561.641.721c1.882.24 2.885.2 4.969-.2a7.515 7.515 0 0 0 1.322.641c-4.688 2.004-10.62-.12-6.933-1.163zm-.6-2.605s-1.002.761.561.923c2.044.2 3.647.24 6.412-.32a2.445 2.445 0 0 0 .962.601c-5.651 1.683-11.982.16-7.935-1.202zm11.06 4.568s.681.561-.761 1.002c-2.685.803-11.261 1.043-13.665 0-.842-.36.761-.881 1.275-.961.521-.12.803-.12.803-.12-.922-.641-6.131 1.322-2.645 1.882 9.578 1.563 17.472-.681 14.987-1.803zM9.15 13.225s-4.368 1.043-1.563 1.402c1.202.161 3.566.12 5.771-.04 1.803-.16 3.608-.48 3.608-.48s-.641.281-1.082.561c-4.448 1.163-12.984.641-10.539-.561 2.084-1.002 3.807-.881 3.807-.881zm7.815 4.368c4.488-2.325 3.004-4.568.962-4.288-.36.08-.521.16-.521.16s.12-.24.401-.32c2.846-1.002 5.089 3.005-0.922 4.568 0 0 .04-.04.08-.12zm-7.373 6.332c4.328.28 10.94-.16 11.1-2.205 0 0-.32.803-3.566 1.402-3.687.681-8.255.6-10.94.16 0 0 .561.48 3.407.641z"
-            fill="currentColor"
-          />
-          <path
-            d="M14.247.001s2.485 2.525-2.364 6.332c-3.887 3.086-.881 4.848 0 6.853-2.285-2.044-3.927-3.848-2.805-5.53C10.72 5.17 15.249 3.975 14.247.001zm-1.275 11.501c1.163 1.322-.32 2.525-.32 2.525s2.966-1.523 1.605-3.407c-1.242-1.803-2.205-2.685 3.005-5.69 0 0-8.215 2.044-4.288 6.572z"
-            fill="currentColor"
-          />
-        </svg>
-      ),
-      color: "text-red-500",
-    },
-    { name: "Docker", icon: <SiDocker />, color: "text-blue-400" },
-    { name: "Linux", icon: <SiLinux />, color: "text-yellow-400" },
-  ];
+const techStack: {
+  name: string;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  color: string;
+}[] = [
+  { name: "Rust", icon: SiRust, color: "text-orange-500" },
+  { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+  { name: "React", icon: SiReact, color: "text-cyan-500" },
+  { name: "Go", icon: SiGo, color: "text-cyan-400" },
+  { name: "Python", icon: SiPython, color: "text-yellow-500" },
+  {
+    name: "Java",
+    icon: () => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M8.717 18.555s-.922.561.641.721c1.882.24 2.885.2 4.969-.2a7.515 7.515 0 0 0 1.322.641c-4.688 2.004-10.62-.12-6.933-1.163zm-.6-2.605s-1.002.761.561.923c2.044.2 3.647.24 6.412-.32a2.445 2.445 0 0 0 .962.601c-5.651 1.683-11.982.16-7.935-1.202zm11.06 4.568s.681.561-.761 1.002c-2.685.803-11.261 1.043-13.665 0-.842-.36.761-.881 1.275-.961.521-.12.803-.12.803-.12-.922-.641-6.131 1.322-2.645 1.882 9.578 1.563 17.472-.681 14.987-1.803zM9.15 13.225s-4.368 1.043-1.563 1.402c1.202.161 3.566.12 5.771-.04 1.803-.16 3.608-.48 3.608-.48s-.641.281-1.082.561c-4.448 1.163-12.984.641-10.539-.561 2.084-1.002 3.807-.881 3.807-.881zm7.815 4.368c4.488-2.325 3.004-4.568.962-4.288-.36.08-.521.16-.521.16s.12-.24.401-.32c2.846-1.002 5.089 3.005-0.922 4.568 0 0 .04-.04.08-.12zm-7.373 6.332c4.328.28 10.94-.16 11.1-2.205 0 0-.32.803-3.566 1.402-3.687.681-8.255.6-10.94.16 0 0 .561.48 3.407.641z"
+          fill="currentColor"
+        />
+        <path
+          d="M14.247.001s2.485 2.525-2.364 6.332c-3.887 3.086-.881 4.848 0 6.853-2.285-2.044-3.927-3.848-2.805-5.53C10.72 5.17 15.249 3.975 14.247.001zm-1.275 11.501c1.163 1.322-.32 2.525-.32 2.525s2.966-1.523 1.605-3.407c-1.242-1.803-2.205-2.685 3.005-5.69 0 0-8.215 2.044-4.288 6.572z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    color: "text-red-500",
+  },
+  { name: "Docker", icon: SiDocker, color: "text-blue-400" },
+  { name: "Linux", icon: SiLinux, color: "text-yellow-400" },
+];
 
+export default function About() {
   const achievements = [
     {
       icon: <Trophy className="w-10 h-10 text-accent mx-auto" />,
@@ -284,7 +292,7 @@ export default function About() {
                 className="glass-card rounded-2xl p-6 text-center hover-lift group"
               >
                 <div className={cn("text-4xl mb-3 mx-auto w-max", tech.color)}>
-                  {tech.icon}
+                  <tech.icon />
                 </div>
                 <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors">
                   {tech.name}
