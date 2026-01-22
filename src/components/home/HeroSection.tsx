@@ -47,9 +47,9 @@ export function HeroSection() {
             variants={fadeInUp}
           >
             <span className="text-foreground">Building</span>{" "}
-            <span className="text-gradient-gold">exceptional</span>
+            <span className="text-gradient-gold">powerful</span>
             <br />
-            <span className="text-foreground">digital experiences</span>
+            <span className="text-foreground">digital products</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -62,7 +62,7 @@ export function HeroSection() {
             <span className="text-foreground font-medium">Klesti Selimaj</span>,
             a 16-year-old software engineer with 6+ years of experience.
             Passionate about low-level systems, modern web apps, and crafting
-            tools that make a difference.
+            tools.
           </motion.p>
 
           {/* CTA Buttons */}

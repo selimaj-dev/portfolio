@@ -20,8 +20,6 @@ export function Footer() {
             </Link>
             <p className="text-muted-foreground text-sm max-w-sm">
               Building digital experiences with precision and passion.
-              Specializing in low-level systems, modern web applications, and
-              everything in between.
             </p>
           </div>
 

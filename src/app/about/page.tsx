@@ -126,13 +126,13 @@ export default function About() {
       icon: <Github className="w-10 h-10 text-accent mx-auto" />,
       title: "Contributor to 80+ Public Repositories",
       description:
-        "Actively contributed code, bug fixes, and features to multiple open-source projects.",
+        "Actively contributed code to multiple open-source projects.",
     },
     {
       icon: <Box className="w-10 h-10 text-accent mx-auto" />,
       title: "Built & Deployed 3 Full-Stack Applications",
       description:
-        "Completed end-to-end development projects using Next.js, React, and TypeScript.",
+        "Completed end-to-end development projects using Next.js, React, and Rust.",
     },
     {
       icon: <FileText className="w-10 h-10 text-accent mx-auto" />,
@@ -198,8 +198,8 @@ export default function About() {
                 className="text-lg text-muted-foreground mb-6"
               >
                 A 16-year-old software engineer from Albania with 6+ years of
-                experience. I'm passionate about building things that matter,
-                from low-level systems to beautiful user interfaces.
+                experience. I'm passionate about building low-level systems and
+                beautiful user interfaces.
               </motion.p>
               <motion.p
                 variants={fadeInUp}
