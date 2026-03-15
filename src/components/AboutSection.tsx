@@ -8,7 +8,7 @@ import { EarthIcon, LayersIcon, TargetIcon, ZapIcon } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const ABOUT_VISUAL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663439135967/RkRL4wd7YzNoLyaN7suWbR/about-visual-Y4xCyLgcmnZTRAJCDCgU7o.webp";
+  "/logo.png";
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
