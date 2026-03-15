@@ -5,7 +5,7 @@
  */
 
 import { useEffect, useRef } from "react";
-import { Github, Youtube, Instagram, ExternalLink, Mail } from "lucide-react";
+import { Github, Youtube, Instagram, ExternalLink, Mail, MailIcon } from "lucide-react";
 
 function useReveal(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -33,7 +33,7 @@ const contactLinks = [
     label: "GitHub",
     handle: "@selimaj-dev",
     href: "https://github.com/selimaj-dev",
-    description: "35+ repositories · 2,670 contributions/year",
+    description: "97+ repositories · 2,670 contributions/year",
   },
   {
     icon: Youtube,
@@ -50,11 +50,11 @@ const contactLinks = [
     description: "Behind the scenes and updates",
   },
   {
-    icon: ExternalLink,
-    label: "Website",
-    handle: "selimaj.dev",
-    href: "https://selimaj.dev",
-    description: "You're already here!",
+    icon: MailIcon,
+    label: "Email",
+    handle: "contact@selimaj.dev",
+    href: "mailto:contact@selimaj.dev",
+    description: "For business inquiries, collaborations, and contact",
   },
 ];
 

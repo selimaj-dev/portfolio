@@ -58,9 +58,7 @@ export default function AboutSection() {
           {/* Left: Text */}
           <div ref={ref1} className="reveal">
             <h2 className="section-heading text-4xl sm:text-5xl text-white mb-8 leading-tight">
-              Building the future,
-              <br />
-              <span className="text-white/40">one commit at a time.</span>
+              Building the future, <span className="text-white/40">one commit at a time.</span>
             </h2>
 
             <div
@@ -187,7 +185,7 @@ export default function AboutSection() {
                     Klesti Selimaj
                   </div>
                   <div className="terminal-label text-xs mt-0.5">
-                    uid=1000(klesti) groups=dev,entrepreneur
+                    uid=1000(klesti) groups=ORUS,Axiom,Saturn,Nexa
                   </div>
                 </div>
               </div>

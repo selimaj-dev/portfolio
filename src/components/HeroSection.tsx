@@ -140,7 +140,7 @@ export default function HeroSection() {
         <div className="mt-20 flex flex-row flex-wrap items-center justify-center gap-6 sm:gap-12 fade-in-up delay-700">
           {[
             { value: "6+", label: "Years Experience" },
-            { value: "35+", label: "Repositories" },
+            { value: "97+", label: "Repositories" },
             { value: "2,670+", label: "Contributions / Year" },
             { value: "#2", label: "National GitHub user" },
           ].map((stat) => (

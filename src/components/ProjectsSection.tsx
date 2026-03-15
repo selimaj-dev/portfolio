@@ -244,9 +244,7 @@ export default function ProjectsSection() {
           <div className="terminal-label mb-4">&gt; ls projects/</div>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <h2 className="section-heading text-4xl sm:text-5xl text-white leading-tight">
-              Things I've
-              <br />
-              <span className="text-white/40">Built</span>
+              Things I've <span className="text-white/40">Built</span>
             </h2>
             <a
               href="https://github.com/selimaj-dev?tab=repositories"
