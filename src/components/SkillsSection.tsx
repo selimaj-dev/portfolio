@@ -4,6 +4,14 @@
  * Flowing chip layout with category grouping
  */
 
+import {
+  CpuIcon,
+  PaletteIcon,
+  RocketIcon,
+  ShieldCheckIcon,
+  TerminalIcon,
+  ZapIcon,
+} from "lucide-react";
 import { useEffect, useRef } from "react";
 
 function useReveal(threshold = 0.1) {
@@ -18,7 +26,7 @@ function useReveal(threshold = 0.1) {
           observer.disconnect();
         }
       },
-      { threshold }
+      { threshold },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -26,7 +34,8 @@ function useReveal(threshold = 0.1) {
   return ref;
 }
 
-const CODE_VISUAL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663439135967/RkRL4wd7YzNoLyaN7suWbR/code-visual-96fdFEYLcFy2ct3UAAmiG6.webp";
+const CODE_VISUAL =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663439135967/RkRL4wd7YzNoLyaN7suWbR/code-visual-96fdFEYLcFy2ct3UAAmiG6.webp";
 
 interface SkillCategory {
   label: string;
@@ -106,7 +115,11 @@ export default function SkillsSection() {
   const contentRef = useReveal(0.05);
 
   return (
-    <section id="skills" className="py-32 relative" style={{ background: "#080808" }}>
+    <section
+      id="skills"
+      className="py-32 relative"
+      style={{ background: "#080808" }}
+    >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6">
@@ -115,9 +128,7 @@ export default function SkillsSection() {
           <div className="terminal-label mb-4">&gt; cat skills.json</div>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <h2 className="section-heading text-4xl sm:text-5xl text-white leading-tight">
-              Tech I Work
-              <br />
-              <span className="text-white/40">With</span>
+              Tech I Work <span className="text-white/40">With</span>
             </h2>
             <div className="flex items-center gap-4 terminal-label text-xs">
               <span className="flex items-center gap-1.5">
@@ -143,7 +154,9 @@ export default function SkillsSection() {
               {skillCategories.map((cat) => (
                 <div key={cat.label}>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="terminal-label text-xs">{cat.terminalLabel}</span>
+                    <span className="terminal-label text-xs">
+                      {cat.terminalLabel}
+                    </span>
                     <div className="flex-1 h-px bg-white/5" />
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -152,8 +165,12 @@ export default function SkillsSection() {
                         key={skill.name}
                         className="skill-chip"
                         style={{
-                          background: skill.level ? levelColors[skill.level] : undefined,
-                          borderColor: skill.level ? levelBorders[skill.level] : undefined,
+                          background: skill.level
+                            ? levelColors[skill.level]
+                            : undefined,
+                          borderColor: skill.level
+                            ? levelBorders[skill.level]
+                            : undefined,
                         }}
                       >
                         {skill.name}
@@ -174,7 +191,9 @@ export default function SkillsSection() {
                   className="w-full h-48 object-cover opacity-70"
                 />
                 <div className="p-4">
-                  <div className="terminal-label text-xs mb-1">$ git log --oneline</div>
+                  <div className="terminal-label text-xs mb-1">
+                    $ git log --oneline
+                  </div>
                   <div
                     className="text-white/50 text-xs leading-relaxed"
                     style={{ fontFamily: "'JetBrains Mono', monospace" }}
@@ -188,19 +207,30 @@ export default function SkillsSection() {
 
               {/* Interests */}
               <div className="glass rounded-2xl p-5">
-                <div className="terminal-label text-xs mb-4">&gt; interests/</div>
+                <div className="terminal-label text-xs mb-4">
+                  &gt; interests/
+                </div>
                 <div className="space-y-3">
                   {[
-                    { icon: "🔐", label: "Hacking & Security" },
-                    { icon: "🖥️", label: "Low-level Systems" },
-                    { icon: "🎨", label: "UI/UX Design" },
-                    { icon: "🚀", label: "SaaS & Startups" },
-                    { icon: "🦀", label: "Rust Ecosystem" },
-                    { icon: "🐧", label: "Linux & Open Source" },
+                    {
+                      icon: <ShieldCheckIcon size={20} />,
+                      label: "Hacking & Security",
+                    },
+                    { icon: <CpuIcon size={20} />, label: "Low-level Systems" },
+                    { icon: <PaletteIcon size={20} />, label: "UI/UX Design" },
+                    {
+                      icon: <RocketIcon size={20} />,
+                      label: "SaaS & Startups",
+                    },
+                    { icon: <ZapIcon size={20} />, label: "Rust Ecosystem" },
+                    {
+                      icon: <TerminalIcon size={20} />,
+                      label: "Linux & Open Source",
+                    },
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="flex items-center gap-3 text-sm text-white/60"
+                      className="flex items-center gap-2 text-sm text-white/60"
                       style={{ fontFamily: "'DM Sans', sans-serif" }}
                     >
                       <span className="text-base">{item.icon}</span>
