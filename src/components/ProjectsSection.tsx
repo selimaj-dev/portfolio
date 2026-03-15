@@ -19,7 +19,7 @@ function useReveal(threshold = 0.1) {
           observer.disconnect();
         }
       },
-      { threshold }
+      { threshold },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -53,7 +53,8 @@ const projects: Project[] = [
   {
     name: "osui",
     org: "osui-rs",
-    description: "A TUI library written in Rust — build terminal UIs with a component-based approach.",
+    description:
+      "A TUI library written in Rust — build terminal UIs with a component-based approach.",
     language: "Rust",
     stars: 7,
     href: "https://github.com/osui-rs/osui",
@@ -63,7 +64,8 @@ const projects: Project[] = [
   {
     name: "saturnclient",
     org: "saturnclientmc",
-    description: "Saturn Client — a Minecraft client full of customizability and free cosmetics.",
+    description:
+      "Saturn Client — a Minecraft client full of customizability and free cosmetics.",
     language: "Java",
     stars: 7,
     forks: 2,
@@ -74,7 +76,8 @@ const projects: Project[] = [
   {
     name: "dev-run",
     org: "orus-dev",
-    description: "DevRun — a community-driven competitive programming platform inspired by speedrunning.",
+    description:
+      "DevRun — a community-driven competitive programming platform inspired by speedrunning.",
     language: "TypeScript",
     stars: 3,
     href: "https://github.com/orus-dev/dev-run",
@@ -82,19 +85,21 @@ const projects: Project[] = [
     tag: "Platform",
   },
   {
-    name: "linear-linux",
-    description: "Linux support for linear.app — bringing the popular project management tool to Linux.",
-    language: "JavaScript",
-    stars: 27,
-    forks: 5,
-    href: "https://github.com/selimaj-dev/linear-linux",
+    name: "nexa-trade",
+    org: "nexa-sol",
+    description:
+      "The Solana trading terminal supercharged by AI — trade smarter.",
+    language: "TypeScript",
+    stars: 1,
+    href: "https://github.com/nexa-sol/nexa-trade",
     featured: true,
-    tag: "Tool",
+    tag: "FinTech",
   },
   {
     name: "dockship",
     org: "orus-dev",
-    description: "A powerful self-hosted deployment platform for managing your applications.",
+    description:
+      "A powerful self-hosted deployment platform for managing your applications.",
     language: "TypeScript",
     stars: 1,
     href: "https://github.com/orus-dev/dockship",
@@ -110,13 +115,14 @@ const projects: Project[] = [
     tag: "App",
   },
   {
-    name: "nexa-trade",
-    org: "nexa-sol",
-    description: "The Solana trading terminal supercharged by AI — trade smarter.",
-    language: "TypeScript",
-    stars: 1,
-    href: "https://github.com/nexa-sol/nexa-trade",
-    tag: "FinTech",
+    name: "linear-linux",
+    description:
+      "Linux support for linear.app — bringing the popular project management tool to Linux.",
+    language: "JavaScript",
+    stars: 27,
+    forks: 5,
+    href: "https://github.com/selimaj-dev/linear-linux",
+    tag: "Tool",
   },
   {
     name: "osmium",
@@ -128,7 +134,8 @@ const projects: Project[] = [
   },
   {
     name: "spark",
-    description: "AI documentation generator that takes context from your repository's source code.",
+    description:
+      "AI documentation generator that takes context from your repository's source code.",
     language: "Python",
     stars: 2,
     href: "https://github.com/selimaj-dev/spark",
@@ -136,7 +143,8 @@ const projects: Project[] = [
   },
   {
     name: "flux",
-    description: "A tool and library for using multiple languages in one codebase seamlessly.",
+    description:
+      "A tool and library for using multiple languages in one codebase seamlessly.",
     language: "Rust",
     stars: 1,
     href: "https://github.com/selimaj-dev/flux",
@@ -206,10 +214,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       {/* Footer */}
       <div className="flex items-center gap-4">
         <span className="lang-badge">
-          <span
-            className="lang-dot"
-            style={{ backgroundColor: langColor }}
-          />
+          <span className="lang-dot" style={{ backgroundColor: langColor }} />
           {project.language}
         </span>
         <span className="lang-badge">
@@ -235,7 +240,11 @@ export default function ProjectsSection() {
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-32 relative" style={{ background: "#080808" }}>
+    <section
+      id="projects"
+      className="py-32 relative"
+      style={{ background: "#080808" }}
+    >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6">
@@ -262,15 +271,25 @@ export default function ProjectsSection() {
           <div className="terminal-label mb-4 text-xs">// featured</div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
             {featured.map((project, i) => (
-              <ProjectCard key={project.name} project={project} delay={i * 80} />
+              <ProjectCard
+                key={project.name}
+                project={project}
+                delay={i * 80}
+              />
             ))}
           </div>
 
           {/* Rest of projects (smaller grid) */}
-          <div className="terminal-label mb-4 text-xs mt-8">// more projects</div>
+          <div className="terminal-label mb-4 text-xs mt-8">
+            // more projects
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {rest.map((project, i) => (
-              <ProjectCard key={project.name} project={project} delay={i * 60} />
+              <ProjectCard
+                key={project.name}
+                project={project}
+                delay={i * 60}
+              />
             ))}
           </div>
         </div>
