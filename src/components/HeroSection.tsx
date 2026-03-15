@@ -142,7 +142,7 @@ export default function HeroSection() {
             { value: "6+", label: "Years Experience" },
             { value: "35+", label: "Repositories" },
             { value: "2,670+", label: "Contributions / Year" },
-            { value: "177+", label: "Stars Earned" },
+            { value: "#2", label: "National GitHub user" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div
