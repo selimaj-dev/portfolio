@@ -137,7 +137,7 @@ export default function HeroSection() {
         </div>
 
         {/* Stats row */}
-        <div className="mt-20 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 fade-in-up delay-700">
+        <div className="mt-20 flex flex-row flex-wrap items-center justify-center gap-6 sm:gap-12 fade-in-up delay-700">
           {[
             { value: "6+", label: "Years Experience" },
             { value: "35+", label: "Repositories" },
