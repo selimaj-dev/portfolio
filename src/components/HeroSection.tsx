@@ -63,12 +63,12 @@ export default function HeroSection() {
       />
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#080808]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/60 via-transparent to-[#080808]/60" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-[#080808]" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#080808]/60 via-transparent to-[#080808]/60" />
 
       {/* Animated glow orb */}
       <div
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full pointer-events-none"
         style={{
           background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)",
           animation: "float 6s ease-in-out infinite",
@@ -140,7 +140,7 @@ export default function HeroSection() {
         <div className="mt-20 flex flex-row flex-wrap items-center justify-center gap-6 sm:gap-12 fade-in-up delay-700">
           {[
             { value: "6+", label: "Years Experience" },
-            { value: "35+", label: "Repositories" },
+            { value: "97+", label: "Repositories" },
             { value: "2,670+", label: "Contributions / Year" },
             { value: "#2", label: "National GitHub user" },
           ].map((stat) => (
@@ -159,7 +159,7 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 fade-in-up delay-800" style={{animationFillMode:'forwards'}}>
-        <div className="w-px h-8 bg-gradient-to-b from-white/30 to-transparent" />
+        <div className="w-px h-8 bg-linear-to-b from-white/30 to-transparent" />
         <span className="terminal-label text-xs">scroll</span>
       </div>
     </section>

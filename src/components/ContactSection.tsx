@@ -5,7 +5,7 @@
  */
 
 import { useEffect, useRef } from "react";
-import { Github, Youtube, Instagram, ExternalLink, Mail } from "lucide-react";
+import { Github, Youtube, Instagram, ExternalLink, Mail, MailIcon } from "lucide-react";
 
 function useReveal(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -33,7 +33,7 @@ const contactLinks = [
     label: "GitHub",
     handle: "@selimaj-dev",
     href: "https://github.com/selimaj-dev",
-    description: "35+ repositories · 2,670 contributions/year",
+    description: "97+ repositories · 2,670 contributions/year",
   },
   {
     icon: Youtube,
@@ -50,11 +50,11 @@ const contactLinks = [
     description: "Behind the scenes and updates",
   },
   {
-    icon: ExternalLink,
-    label: "Website",
-    handle: "selimaj.dev",
-    href: "https://selimaj.dev",
-    description: "You're already here!",
+    icon: MailIcon,
+    label: "Email",
+    handle: "contact@selimaj.dev",
+    href: "mailto:contact@selimaj.dev",
+    description: "For business inquiries, collaborations, and contact",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-32 relative" style={{ background: "#080808" }}>
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
 
       {/* Subtle radial glow */}
       <div
