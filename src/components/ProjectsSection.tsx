@@ -245,7 +245,7 @@ export default function ProjectsSection() {
       className="py-32 relative"
       style={{ background: "#080808" }}
     >
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}

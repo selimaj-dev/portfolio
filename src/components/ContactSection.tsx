@@ -64,7 +64,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-32 relative" style={{ background: "#080808" }}>
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
 
       {/* Subtle radial glow */}
       <div

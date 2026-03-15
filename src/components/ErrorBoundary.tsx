@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { AlertTriangle, RotateCcw } from "lucide-react";
-import { Component, ReactNode } from "react";
+import { Component, type ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
@@ -28,7 +28,7 @@ class ErrorBoundary extends Component<Props, State> {
           <div className="flex flex-col items-center w-full max-w-2xl p-8">
             <AlertTriangle
               size={48}
-              className="text-destructive mb-6 flex-shrink-0"
+              className="text-destructive mb-6 shrink-0"
             />
 
             <h2 className="text-xl mb-4">An unexpected error occurred.</h2>
